@@ -70,7 +70,7 @@ class QBatteryInfoPrivate : public QObject
 public:
     QBatteryInfoPrivate(QBatteryInfo *);
     QBatteryInfoPrivate(int, QBatteryInfo *);
-    ~QBatteryInfoPrivate() {}
+    ~QBatteryInfoPrivate();
 
     bool isValid() const;
     int level() const;
