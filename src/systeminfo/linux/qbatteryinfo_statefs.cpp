@@ -82,6 +82,12 @@ QBatteryInfoPrivate::QBatteryInfoPrivate(int, QBatteryInfo *parent)
     init();
 }
 
+QBatteryInfoPrivate::~QBatteryInfoPrivate()
+{
+    for (auto p : properties_)
+        delete p;
+}
+
 #define PROP_CONNECTED(parent, name)                \
     std::make_pair(QString(QS_("Battery." #name)),  \
                    &QBatteryInfoPrivate::on##name)
